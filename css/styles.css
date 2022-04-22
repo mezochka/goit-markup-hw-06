@@ -280,13 +280,9 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
  
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   
   background-color: var(--primary-white-color);
   box-shadow:
@@ -296,18 +292,82 @@ img {
   border-radius: 4px;
 
   transition: transform var(--duration) var(--timing-function); 
+  position: relative;
 }
 
 .modal-exit {
-  margin-top: 8px;
-  margin-right: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  
   padding: 0;
   border: none;
   background-color: var(--primary-white-color);
   cursor: pointer;
 }
 
+.registr {
+  padding: 40px;
+}
+.modal-header {
+  display: block;
 
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  color: var(--title-text-color);
+  
+}
+.position-input {
+  display: inline-block;
+  color: var(--primary-text-color);
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 448px;
+  height: 40px;
+  padding-left: 42px;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 4px;
+}
+
+.icon-modal {
+  position: absolute;
+  left: 12px;
+  transform: translateY(11px);
+  fill: currentColor;
+  color: #000;
+}
+
+.position-input:focus-within .icon-modal {
+  color: var(--accent-color);
+  /* border-color: var(--accent-color); */
+}
+
+.position-input:focus-within .input-field {
+  /* color: var(--accent-color); */
+  border-color: var(--accent-color);
+  outline: none;
+  outline-color: transparent;
+}
+
+.input-text {
+  display: flex;
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
 /* competencies  */
 
 .items-s {
@@ -823,7 +883,7 @@ display: flex;
   color: var(--primary-white-color);
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 0;
   border-radius: 4px;
 
   cursor: pointer;
