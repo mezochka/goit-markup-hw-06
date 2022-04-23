@@ -49,7 +49,7 @@
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
                <button type="button" class="button" data-modal-open>Заказать услугу</button>
-               <div class="backdrop" data-modal>
+               <div class="backdrop is-hidden" data-modal>
                     <!-- is-hidden for backdrop-->
                    <div class="modal">
                     
@@ -59,42 +59,46 @@
                             
                                 <label class="position-input">
                                     <span class="input-text">Имя</span>
-                                    <input type="name" class="input-field">
+                                    <input type="name" name="name" class="input-field">
+
                                     <svg width="18" height="18" class="icon-modal">
                                         <use href="./image/icons.svg#icon-person-black"></use>
                                     </svg>
                                 </label>
-                           
-
-                            
+                                                       
                                 <label class="position-input">
                                     <span class="input-text">Телефон</span>
-                                    <input type="phone" id="phone" class="input-field">
+                                    <input type="phone" name="phone" class="input-field">
+
                                     <svg width="18" height="18" class="icon-modal">
                                         <use href="./image/icons.svg#icon-phone-black"></use>
                                     </svg>
                                 </label>
                            
-
-                           
                                 <label class="position-input">
                                 <span class="input-text">Почта</span>
-                                    <input type="email" id="email" class="input-field">
+                                    <input type="email" name="email" class="input-field">
+                                    
                                     <svg width="18" height="18" class="icon-modal">
                                         <use href="./image/icons.svg#icon-email-black"></use>
                                     </svg>
                                 </label>
                            
-
                             <label class="position-input">
                                 <span class="input-text">Комментарий</span> 
-                                <textarea name="text" id="comment" rows="10"></textarea>
+                                <textarea name="comment" class="input-field textarea" placeholder="Введите текст"></textarea>
                             </label>
-                            
-                            <label>
-                                <input type="checkbox" name="">
-                            </label>
-                            
+
+                            <div class="center">
+                                <label class="agreement">
+                                    <input type="checkbox" name="policy" class="check">
+                                    <span class="custom-checkbox"></span>
+                                    <span>Соглашаюсь с рассылкой и принимаю <a href="" class="policy">Условия договора</a></span>
+                                </label>
+
+                                <button type="submit" class="modal-button">Отправить</button>
+                            </div>
+
                         </form>
 
                        <button type="button" class="modal-exit" data-modal-close>
