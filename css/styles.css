@@ -292,7 +292,6 @@ img {
   border-radius: 4px;
 
   transition: transform var(--duration) var(--timing-function); 
-  position: relative;
 }
 
 .modal-exit {
@@ -315,6 +314,9 @@ img {
 
 .registr {
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modal-header {
@@ -336,6 +338,7 @@ img {
   display: inline-block;
   color: var(--primary-text-color);
   position: relative;
+  margin-bottom: 10px;
   
 }
 
@@ -345,7 +348,7 @@ img {
   height: 40px;
   padding: 0;
   padding-left: 42px;
-  margin-bottom: 10px;
+  
 
   border: 1px solid rgba(117, 117, 117, 0.5);
   border-radius: 4px;
@@ -386,11 +389,14 @@ img {
   height: 120px;
   padding: 12px 16px;
   resize: none;
-  margin-bottom: 20px;
+  
 
   line-height: 1.14;
   letter-spacing: 0.01em;
- 
+}
+
+.textarea-margin {
+  margin-bottom: 20px;
 }
 .policy {
   color: var(--accent-color);
@@ -399,7 +405,6 @@ img {
   display: flex;
   align-items: center;
 
-  font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
@@ -412,7 +417,6 @@ img {
    width: 1px;
    height: 1px;
    margin: -1px;
-   bottom: 0;
    padding: 0;
    clip: rect(0 0 0 0);
    overflow: hidden;
@@ -420,13 +424,14 @@ img {
 
 .custom-checkbox {
   display: inline-block;
-  margin-right: 8.38px;
+  margin-right: 8.4px;
   width: 16px;
   height: 15px;
   border: 2px solid var(--secondary-logo-color);
   border-radius: 2px;
 
-  transition: background-color var(--duration) var(--timing-function);
+  transition: border-color var(--duration) var(--timing-function),
+  background-color var(--duration) var(--timing-function);
 }
 
 .check:checked + .custom-checkbox {
@@ -435,7 +440,11 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   border-color: var(--accent-color);
-  
+}
+
+.check:focus  + .custom-checkbox,
+.check:hover  + .custom-checkbox {
+  border-color: var(--accent-color);
 }
 
 .modal-button {
@@ -445,6 +454,7 @@ img {
 
   width: 200px;
   height: 50px;
+  margin: 0 auto;
 
   border: none;
   background: var(--accent-color);
@@ -458,13 +468,6 @@ img {
   color: var(--primary-white-color);
 
   cursor: pointer;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 /* competencies  */
@@ -856,42 +859,29 @@ display: flex;
 .thumb {
   position: relative;
   overflow: hidden; 
-  
 }
 
 .overlay {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   position: absolute;
   top: 0;
   left: 0;
-
+  
   margin: 0;
   width: 100%;
   height: 100%;
-
+  padding: 63px 24px;
+  
   background-color: var(--bg-overlay);
   
-  opacity: 1;
-
-  transform: translateY(101%);
-  transition: transform var(--duration) var(--timing-function);
-}
-
-.overlay-text {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  margin: 0;
-  width: 322px;
+  opacity: 0;
 
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
+
+  transform: translateY(101%);
+  transition: transform var(--duration) var(--timing-function);
 }
 
 .link-examples:hover .overlay,
@@ -928,20 +918,15 @@ display: flex;
 
 /* form */
 .form {
- margin-left: 93px;
- display: flex;
- flex-direction: column;
- 
- padding: 0;
+ margin-left: auto;
+ }
 
-}
 .wrapper {
   display: flex;
 }
 
 .form-input {
   width: 358px;
-  
   
   padding-top: 15px;
   padding-left: 16px;
@@ -957,6 +942,7 @@ display: flex;
 .form-text {
   display: block;
   margin-bottom: 20px;
+  margin-top: 0;
     
   font-weight: 700;
   line-height: 1.14;
